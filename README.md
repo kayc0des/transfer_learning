@@ -15,6 +15,7 @@ The table below summarizes the performance of ResNet50, VGG16 and EfficientNetB0
 | Model     | Accuracy | Loss  | Precision (No Tumor) | Precision (Tumor) | Recall (No Tumor) | Recall (Tumor) | F1 Score (No Tumor) | F1 Score (Tumor) |
 |-----------|----------|-------|----------------------|-------------------|-------------------|----------------|---------------------|------------------|
 | ResNet50  | 86.84% (85.05% val)  | 0.3588 (0.3934 val)| 0.92                 | 0.80              | 0.81              | 0.91           | 0.86                | 0.85             |
+| EfficientNetB0 | 55.03% (53.32% val)   | 0.7437 (0.7357 val)| 0.56                 | 0.00              | 1.00              | 0.00           | 0.72                | 0.00             |
 
 
 ## ResNet50
@@ -23,7 +24,7 @@ ResNet50 is a powerful and widely used model in computer vision tasks due to its
 
 ![Training History](img/resnet50_history.png)
 
-### Key Training Results
+### Key Training Results for ResNet50
 
 - **Training Accuracy**: 86.84%
 - **Training Loss**: 0.3588
@@ -32,5 +33,25 @@ ResNet50 is a powerful and widely used model in computer vision tasks due to its
 - **Precision (No Tumor)**: 0.92, **Precision (Tumor)**: 0.80
 - **Recall (No Tumor)**: 0.81, **Recall (Tumor)**: 0.91
 - **F1 Score (No Tumor)**: 0.86, **F1 Score (Tumor)**: 0.85
+
+## VGG16
+
+### Key Training Results for VGG16
+
+## EfficentNetB0
+
+EfficientNetB0 is part of the EfficientNet family, known for its balance between model performance and efficiency. It scales three critical factors—depth, width, and resolution—proportionately, ensuring better accuracy with fewer parameters and computational requirements. However, in our case of brain tumor classification, the model struggled with classifying the 'Tumor' class effectively.
+
+![Training History](img/enet_model.png)
+
+### Key Training Results for EfficientNetB0
+
+- **Training Accuracy**: 55.03%
+- **Training Loss**: 0.7437
+- **Validation Accuracy**: 53.32%
+- **Validation Loss**: 0.7357
+- **Precision (No Tumor)**: 0.56, **Precision (Tumor)**: 0.00
+- **Recall (No Tumor)**: 1.00, **Recall (Tumor)**: 0.00
+- **F1 Score (No Tumor)**: 0.72, **F1 Score (Tumor)**: 0.00
 
 ---
