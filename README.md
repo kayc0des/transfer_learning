@@ -50,6 +50,27 @@ Here’s why I selected ResNet50:
 
 ## VGG16
 
+### Architecture Rationale
+
+Here’s why I selected VGG16:
+
+- Architectural Depth: VGG16 features 16 layers (13 convolutional layers, dropped fully connected), providing sufficient depth to learn complex features from the brain tumor dataset. The uniformity and depth of VGG16 make it effective in capturing fine details in medical images, such as brain scans.
+
+- Feature Extraction Power: The pre-trained weights from ImageNet are used by VGG16 to extract low- and mid-level features like edges and textures. By freezing the base layers (trainable=False), I leverage these features to detect patterns relevant to brain tumor classification.
+
+**Custom Layers for Further Learning:**
+
+- I added a Flatten layer to transform the 2D feature maps into a 1D feature vector suitable for dense layers.
+The first Dense layer with 128 neurons and ReLU activation helps introduce non-linearity, enhancing the model’s ability to learn complex relationships in the data.
+
+- A second Dense layer with 64 neurons and ReLU activation continues to refine feature learning, with L2 regularization applied to both dense layers to prevent overfitting. This regularization helps the model generalize better, especially given the relatively small size of medical datasets.
+
+- The final Dense layer with 2 neurons uses softmax activation to provide class probabilities, crucial for binary classification of Tumor vs. No Tumor.
+
+- Regularization with L2: The L2 regularization on the dense layers helps mitigate overfitting, which is important for maintaining model performance and generalization when training on medical image data.
+
+- Output with Softmax: The softmax activation in the output layer allows the model to output probabilities for each class, providing a clear interpretation of its predictions in terms of confidence levels.
+
 ### Key Training Results for VGG16
 
 ## EfficentNetB0
