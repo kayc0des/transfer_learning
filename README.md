@@ -22,6 +22,20 @@ The table below summarizes the performance of ResNet50, VGG16 and EfficientNetB0
 
 ResNet50 is a powerful and widely used model in computer vision tasks due to its unique **residual learning** approach. Residual connections help the model overcome the **vanishing gradient problem**, making it capable of training deeper networks effectively. This ability to train deep layers is beneficial when working with complex image classification tasks like brain tumor detection, where subtle variations in the images can be crucial for accurate classification. Additionally, ResNet50 is pre-trained on a large dataset (ImageNet), allowing it to generalize better and extract relevant features when fine-tuned on a medical dataset like brain tumor scans.
 
+### Architecture Rationale
+
+Here’s why I selected ResNet50:
+
+- `Depth with Skip Connections`: ResNet50 has 50 layers, which gives it the depth needed to capture detailed features in the brain tumor dataset. The residual (skip) connections help avoid the degradation problem, where deeper models can perform worse. This feature ensures that even with many layers, the model remains effective. This is especially important when working with medical images, where subtle details in brain scans are critical for accurate classification.
+
+- `Feature Extraction Power`: By freezing the base layers (trainable=False), I can take advantage of the pre-trained weights from ImageNet. This allows the model to extract essential low- and mid-level features, such as edges, textures, and shapes, which are key to identifying tumor boundaries and anomalies in brain scans.
+
+- `Regularization with L2`: The Dense layer with 64 neurons uses L2 regularization, which helps prevent overfitting—a common issue when working with medical datasets. By penalizing large weights, I ensure that the model generalizes better and doesn't rely too heavily on specific features in the training data.
+
+- `ReLU Activation`: I chose the ReLU activation function for the Dense layer because it introduces non-linearity, which is necessary for learning complex patterns. This is particularly important for distinguishing between subtle differences in tumor and non-tumor images.
+
+- `Output with Softmax`: The final Dense layer has 2 neurons, representing the two classes: Tumor and No Tumor. I used softmax activation to output class probabilities, which helps in interpreting the model’s predictions in terms of confidence.
+
 ![Training History](img/resnet50_history.png)
 
 ### Key Training Results for ResNet50
