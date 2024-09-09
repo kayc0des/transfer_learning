@@ -51,6 +51,8 @@ Here’s why I selected ResNet50:
 
 ## VGG16
 
+The **VGG16** architecture is one of the most widely used convolutional neural networks, known for its simplicity and depth. It consists of 16 layers, including convolutional and fully connected layers. The architecture is effective for image classification tasks due to its ability to capture intricate patterns through its deep layers.
+
 ![Training History](img/vgg.png)
 
 ### Architecture Rationale
@@ -99,5 +101,11 @@ EfficientNetB0 is part of the EfficientNet family, known for its balance between
 - **Precision (No Tumor)**: 0.56, **Precision (Tumor)**: 0.00
 - **Recall (No Tumor)**: 1.00, **Recall (Tumor)**: 0.00
 - **F1 Score (No Tumor)**: 0.72, **F1 Score (Tumor)**: 0.00
+
+## Conclusion
+
+Based on the results, VGG16 emerged as the best-performing model with 95.22% accuracy (92.19% on validation). Although with a a loss greater than 0.5 (I believe if I increased the number of epochs we would have edged closer to the local minima), it achieved a strong balance between precision and recall, with an F1 score of 0.94 for No Tumor and 0.91 for Tumor. This outperformed ResNet50, which had 86.84% accuracy (85.05% on validation) and lower F1 scores. EfficientNetB0 performed the worst, with only 55.03% accuracy and significant issues in detecting tumors.
+
+Thus, VGG16 proved most effective for brain tumor classification in this experiment.
 
 ---
