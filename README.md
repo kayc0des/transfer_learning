@@ -51,6 +51,8 @@ Here’s why I selected ResNet50:
 
 ## VGG16
 
+![Training History](img/vgg.png)
+
 ### Architecture Rationale
 
 Here’s why I selected VGG16:
@@ -73,6 +75,14 @@ The first Dense layer with 128 neurons and ReLU activation helps introduce non-l
 - Output with Softmax: The softmax activation in the output layer allows the model to output probabilities for each class, providing a clear interpretation of its predictions in terms of confidence levels.
 
 ### Key Training Results for VGG16
+
+- **Training Accuracy**: 95.22%
+- **Training Loss**: 0.6606
+- **Validation Accuracy**: 92.19%
+- **Validation Loss**: 0.6990
+- **Precision (No Tumor)**: 0.90, **Precision (Tumor)**: 0.97
+- **Recall (No Tumor)**: 0.98, **Recall (Tumor)**: 0.87
+- **F1 Score (No Tumor)**: 0.94, **F1 Score (Tumor)**: 0.91
 
 ## EfficentNetB0
 
