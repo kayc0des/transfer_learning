@@ -1,5 +1,14 @@
 # Brain Tumor Classification using Transfer Learning
 
+## Table of Content
+
+- [Overview](#overview)
+- [Performance Metrics Across all Models](#performance-metrics-across-all-models)
+- [ResNet50](#resnet50)
+- [VGG16](#vgg16)
+- [EfficentNetB0](#efficientnetb0)
+- [Conclusion](#conclusion)
+
 ## Overview
 
 This project extends a previous Convolutional Neural Network (CNN) model built from scratch for brain tumor classification. Here, I leverage **transfer learning** using several `tf.keras.applications` to enhance performance and reduce training time. The dataset used in this project consists of 3,762 preprocessed brain scan images, each with a resolution of (240, 240, 3). These images have already been converted into NumPy arrays, normalized with pixel values scaled to a range of 0 to 1, and split into training and testing sets. Both `train_data.npz` and `test_data.npz` contain the training and testing images (labeled X) and their corresponding labels (labeled Y).
