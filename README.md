@@ -15,6 +15,7 @@ The table below summarizes the performance of ResNet50, VGG16 and EfficientNetB0
 | Model     | Accuracy | Loss  | Precision (No Tumor) | Precision (Tumor) | Recall (No Tumor) | Recall (Tumor) | F1 Score (No Tumor) | F1 Score (Tumor) |
 |-----------|----------|-------|----------------------|-------------------|-------------------|----------------|---------------------|------------------|
 | ResNet50  | 86.84% (85.05% val)  | 0.3588 (0.3934 val)| 0.92                 | 0.80              | 0.81              | 0.91           | 0.86                | 0.85             |
+| VGG16 | 95.22% (92.19% val)   | 0.6606 (0.6990 val)| 0.90                 | 0.97              | 0.98              | 0.87           | 0.94                | 0.91             |
 | EfficientNetB0 | 55.03% (53.32% val)   | 0.7437 (0.7357 val)| 0.56                 | 0.00              | 1.00              | 0.00           | 0.72                | 0.00             |
 
 
